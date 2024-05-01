@@ -9,12 +9,16 @@
 
 </head>
 <body>
-<div class="container mt-2">
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div class="pull-left">
     <header>
 <h2>Dublin Hotels</h2>
+
+<nav>
+<a href="{{route('hotels.index')}}"class="navitem">Login</a>
+<a href="{{ route('register') }}" class="navitem">Register</a>
+</nav>
     </header>
 </div>
 <div class="pull-right mb-2">

@@ -1,0 +1,20 @@
+header {
+    height: 100px;
+    width: 100%;
+    background-color: brown;
+    margin-top: 0%;
+    display: flex;
+    justify-content: space-between;
+}
+.h2{
+    color: red;
+}
+
+body{
+    margin: 0%;
+}
+
+.navitem{
+    color: antiquewhite;
+    text-decoration: none;
+}
