@@ -3,14 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Dublin Hotels</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+<!-- initial bootstrap style-->
+<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >-->
+<link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+
 </head>
 <body>
 <div class="container mt-2">
 <div class="row">
 <div class="col-lg-12 margin-tb">
 <div class="pull-left">
+    <header>
 <h2>Dublin Hotels</h2>
+    </header>
 </div>
 <div class="pull-right mb-2">
 <a class="btn btn-success" href="{{ route('hotels.create') }}"> Create Hotel</a>
@@ -48,5 +53,7 @@
 @endforeach
 </table>
 {!! $hotels->links() !!}
+
+<footer></footer>
 </body>
 </html>
