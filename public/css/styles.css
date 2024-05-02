@@ -10,8 +10,14 @@ header {
     color: red;
 }
 .mainimg{
-    width:100%;
+    width:70%;
     height: 500px;
+    
+
+}
+.img1 {
+    display: flex;
+    justify-content: center;
 }
 
 body{
@@ -21,6 +27,27 @@ body{
 .navitem{
     color: antiquewhite;
     text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+.navitem::after{
+    content: ''; /* Required for ::after */
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Adjust as needed */
+    width: 100%;
+    height: 2px; /* Adjust as needed */
+    background-color: white; /* Color of the underline */
+    visibility: hidden; /* Hide by default */
+    transform: scaleX(0); /* Start with no width */
+    transition: all 0.3s ease; /* Animation transition */ 
+}
+
+.navitem:hover::after{
+    visibility: visible; /* Show on hover */
+    transform: scaleX(1); 
 }
 
 footer{
@@ -28,4 +55,13 @@ footer{
     width: 100%;
     background-color: brown;
     bottom: 0px;
+}
+h2{
+    color: antiquewhite;
+    padding: 20px;
+}
+nav{
+    display:flex;
+    padding: 30px;
+    align-items: center;
 }

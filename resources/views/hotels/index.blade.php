@@ -16,20 +16,21 @@
 <h2>Dublin Hotels</h2>
 
 <nav>
-<a href="{{route('hotels.index')}}"class="navitem">Login</a>
+<a href="{{route('login')}}"class="navitem">Login</a>
 <a href="{{ route('register') }}" class="navitem">Register</a>
 </nav>
     </header>
 <main>
 
+    <div class="img1">
     <?php
     // Path to the image file
-    $imagePath = "https://cdn.shopify.com/s/files/1/0581/5887/4822/files/The_Shelbourne_647aac87-8253-43c9-8a5d-3ffb198adb27.jpg?v=1629212985";
+    $imagePath = "https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
     // Output the HTML img tag with PHP
     echo "<img src='$imagePath'  alt='Description of the image' class='mainimg'>";
     ?>
-
+    </div>
 <div class="pull-right mb-2">
 <a class="btn btn-success" href="{{ route('hotels.create') }}"> Create Hotel</a>
 </div>
@@ -69,6 +70,9 @@
 
 </main>
 <footer>
+<div>
+</div>
+    <hr>
 
 </footer>
 </body>
