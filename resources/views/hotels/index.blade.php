@@ -62,17 +62,29 @@
 @method('DELETE')
 <button type="submit" class="btn btn-danger">Delete</button>
 </form>
+
+
 </td>
 </tr>
 @endforeach
 </table>
 {!! $hotels->links() !!}
+</br>
+<form method="POST" action="{{ route('bookings.store') }}">
+    @csrf
+    <label>Check In</label>
+    <input type="date" name="booking_in_date" class="form-control" placeholder="Check In">
+</br>
+    <label>Check Out</label>
+    <input type="date" name="booking_out_date" class="form-control" placeholder="Check Out">
+    <button type="submit">Book Now</button>
+</form>
 
 </main>
 <footer>
 <div>
 </div>
-    <hr>
+    <hr/>
 
 </footer>
 </body>
