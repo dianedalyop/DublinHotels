@@ -24,14 +24,21 @@
 @endif
 <form action="{{ route('hotels.store') }}" method="POST" enctype="multipart/form-data">
 @csrf
+
 <div class="row">
-<div class="col-xs-12 col-sm-12 col-md-12">
+
 <div class="form-group">
 <strong>Hotel Name:</strong>
 <input type="text" name="name" class="form-control" placeholder="Hotel Name">
 @error('name')
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
+</div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="form-group">
+    <label for="image">Image:</label>
+    <input type="file" class="form-control" id="image" name="image">
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">

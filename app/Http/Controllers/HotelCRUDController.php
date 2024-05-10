@@ -3,11 +3,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class HotelCRUDController extends Controller
 {
+    use AuthorizesRequests;
     /**
-     * Display a listing of the resource.
+     * 
      *
      * @return \Illuminate\Http\Response
      */
@@ -16,17 +18,13 @@ class HotelCRUDController extends Controller
         $data['hotels'] = Hotel::orderBy('id', 'desc')->paginate(5);
         return view('hotels.index', $data);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('hotels.create');
     }
     /**
-     * Store a newly created resource in storage.
+     * 
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -36,22 +34,25 @@ class HotelCRUDController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'address' => 'required'
+            'address' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $hotel = new Hotel;
         $hotel->name = $request->name;
         $hotel->email = $request->email;
         $hotel->address = $request->address;
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('images'), $imageName);
+            $hotel->image = 'images/' . $imageName;
+        }
+
         $hotel->save();
         return redirect()->route('hotels.index')
             ->with('success', 'Hotel has been created successfully.');
     }
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Hotel $hotel)
     {
         return view('hotels.show', compact('hotel'));
@@ -64,38 +65,45 @@ class HotelCRUDController extends Controller
      */
     public function edit(Hotel $hotel)
     {
+
+        $this->authorize('update', $hotel);
         return view('hotels.edit', compact('hotel'));
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
+        $hotel = Hotel::findOrFail($id);
+        $this->authorize('update', $hotel);
         $request->validate([
             'name' => 'required',
             'email' => 'required',
             'address' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
         $hotel = Hotel::find($id);
         $hotel->name = $request->name;
         $hotel->email = $request->email;
         $hotel->address = $request->address;
+
+
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $imageName = time() . '.' . $request->image->getClientOriginalExtension();
+                $request->image->move(public_path('images'), $imageName);
+                $hotel->image = 'images/' . $imageName;
+            } else {
+
+                return back()->with('error', 'File upload failed.');
+            }
+        }
         $hotel->save();
         return redirect()->route('hotels.index')
             ->with('success', 'Hotel Has Been updated successfully');
     }
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Hotel  $hotel
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy(Hotel $hotel)
     {
+        $this->authorize('delete', $hotel);
         $hotel->delete();
         return redirect()->route('hotels.index')
             ->with('success', 'Hotel has been deleted successfully');

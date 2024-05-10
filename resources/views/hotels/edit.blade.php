@@ -36,6 +36,15 @@
 </div>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="form-group">
+        <strong>Image:</strong>
+        <input type="file" name="image" class="form-control">
+        @error('image')
+            <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+        @enderror
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">
 <strong>Hotel Email:</strong>
 <input type="email" name="email" class="form-control" placeholder="Hotel Email" value="{{ $hotel->email }}">

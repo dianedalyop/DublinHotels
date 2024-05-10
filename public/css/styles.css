@@ -70,3 +70,15 @@ hr{
     height: 0px;
     color: white;
 }
+td img{
+    width:400px;
+    height: 300px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+tr {
+    display: flex;
+    justify-content: space-around;
+}
