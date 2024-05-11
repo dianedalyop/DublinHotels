@@ -80,5 +80,38 @@ body {
 }
 tr {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+td{
+    padding: 10px;
+}
+table{
+    display:flex;
+}
+tbody{
+    display: flex;
+}
+main{
+    margin-top:5px;  
+}
+.img1{
+    margin-bottom: 30px;
+}
+
+main a{
+    padding: 10px;
+    background-color: aquamarine;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin: 5px;
+}
+
+.booking_div form {
+    display: flex;
+    justify-content: space-evenly;
+}
+.booking_div{
+    padding: 40px;
 }

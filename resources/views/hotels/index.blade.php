@@ -15,7 +15,14 @@
     </header>
     <main>
         <div class="img1">
-            
+          
+            <?php
+    // Path to the image file
+    $imagePath = "https://images.unsplash.com/photo-1549918864-48ac978761a4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
+    // Output the HTML img tag with PHP
+    echo "<img src='$imagePath'  alt='Description of the image' class='mainimg'>";
+    ?>
         </div>
         <div class="pull-right mb-2">
             <a class="btn btn-success" href="{{ route('hotels.create') }}"> Create Hotel</a>
@@ -26,17 +33,10 @@
         </div>
         @endif
         <table class="table table-bordered">
-            <tr>
-                <th>S.No</th>
-                <th>Hotel Name</th>
-                <th>Hotel Image</th>
-                <th>Hotel Email</th>
-                <th>Hotel Address</th>
-                <th width="280px">Action</th>
-            </tr>
+           
             @foreach ($hotels as $hotel)
             <tr>
-                <td>{{ $hotel->id }}</td>
+               
                 <td>{{ $hotel->name }}</td>
                 <td>
                     <img src="{{ asset($hotel->image) }}" alt="Hotel Image">
@@ -60,6 +60,7 @@
         </table>
         {!! $hotels->links() !!}
         <br>
+        <div class="booking_div">
         <form method="POST" action="{{ route('bookings.store') }}">
             @csrf
             <label>Check In</label>
@@ -68,6 +69,7 @@
             <input type="date" name="booking_out_date" class="form-control" placeholder="Check Out">
             <button type="submit">Book Now</button>
         </form>
+        </div>
     </main>
     <footer>
         <hr/>
