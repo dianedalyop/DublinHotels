@@ -35,6 +35,13 @@
 @enderror
 </div>
 </div>
+<div class="form-group">
+    <label for="rating">Rating:</label>
+    <input type="number" name="rating" class="form-control" placeholder="Enter rating (1-5)" min="1" max="5">
+    @error('rating')
+    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+    @enderror
+</div>
 <div class="col-xs-12 col-sm-12 col-md-12">
     <div class="form-group">
         <strong>Image:</strong>

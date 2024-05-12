@@ -4,6 +4,18 @@
 <meta charset="UTF-8">
 <title>Add Hotel App</title>
 <link rel="stylesheet" type="text/css" href="resources\css\styles.css">
+<style>
+    /* Define the basic style for both filled and empty stars */
+    .star {
+        font-size: 1.2rem; /* Adjust the size as needed */
+        color: #ffc107; /* Color of filled stars */
+    }
+
+    /* Style for empty stars */
+    .star.empty {
+        color: #e4e5e9; /* Color of empty stars */
+    }
+</style>
 </head>
 <body>
 <div class="container mt-2">
@@ -34,6 +46,13 @@
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
+</div>
+<div class="form-group">
+    <label for="rating">Rating:</label>
+    <input type="number" name="rating" class="form-control" placeholder="Enter rating (1-5)" min="1" max="5">
+    @error('rating')
+    <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
+    @enderror
 </div>
 <div class="col-xs-12 col-sm-12 col-md-12">
 <div class="form-group">

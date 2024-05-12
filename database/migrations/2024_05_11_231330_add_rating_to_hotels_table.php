@@ -8,16 +8,10 @@ return new class extends Migration {
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('hotels', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('image_path');
-            $table->string('email');
-            $table->string('address');
+        Schema::table('hotels', function (Blueprint $table) {
             $table->integer('rating')->default(0);
-            $table->timestamps();
         });
     }
 
@@ -26,6 +20,8 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('hotels');
+        Schema::table('hotels', function (Blueprint $table) {
+            Schema::dropIfExists('hotels');
+        });
     }
 };

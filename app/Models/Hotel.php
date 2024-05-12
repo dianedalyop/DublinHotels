@@ -11,6 +11,7 @@ class Hotel extends Model
     protected $fillable = [
 
         'image',
+        'rating',
     ];
     use HasFactory;
 }

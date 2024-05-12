@@ -36,11 +36,13 @@ class HotelCRUDController extends Controller
             'email' => 'required',
             'address' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'rating' => 'required|numeric|min:0|max:5',
         ]);
         $hotel = new Hotel;
         $hotel->name = $request->name;
         $hotel->email = $request->email;
         $hotel->address = $request->address;
+        $hotel->rating = $request->rating;
 
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->getClientOriginalExtension();
@@ -79,11 +81,13 @@ class HotelCRUDController extends Controller
             'email' => 'required',
             'address' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+            'rating' => 'required|numeric|min:0|max:5',
         ]);
         $hotel = Hotel::find($id);
         $hotel->name = $request->name;
         $hotel->email = $request->email;
         $hotel->address = $request->address;
+        $hotel->rating = $request->rating;
 
 
         if ($request->hasFile('image')) {
