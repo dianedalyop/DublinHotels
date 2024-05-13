@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Add Hotel App</title>
-<link rel="stylesheet" type="text/css" href="resources\css\styles.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 <style>
-    /* Define the basic style for both filled and empty stars */
-    .star {
-        font-size: 1.2rem; /* Adjust the size as needed */
-        color: #ffc107; /* Color of filled stars */
-    }
+   
+       
+       .star.empty {
+            color: #030408; 
+        }
+        .star {
+            font-size: 1.2rem; 
+            color: brown; 
+        }
 
-    /* Style for empty stars */
-    .star.empty {
-        color: #e4e5e9; /* Color of empty stars */
-    }
+    
+        
+    
 </style>
 </head>
 <body>
@@ -34,10 +37,11 @@
 {{ session('status') }}
 </div>
 @endif
+<div class="create-form">
 <form action="{{ route('hotels.store') }}" method="POST" enctype="multipart/form-data">
 @csrf
 
-<div class="row">
+
 
 <div class="form-group">
 <strong>Hotel Name:</strong>
@@ -46,7 +50,7 @@
 <div class="alert alert-danger mt-1 mb-1">{{ $message }}</div>
 @enderror
 </div>
-</div>
+
 <div class="form-group">
     <label for="rating">Rating:</label>
     <input type="number" name="rating" class="form-control" placeholder="Enter rating (1-5)" min="1" max="5">
@@ -81,5 +85,6 @@
 <button type="submit" class="btn btn-primary ml-3">Submit</button>
 </div>
 </form>
+</div>
 </body>
 </html>

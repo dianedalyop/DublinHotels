@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Edit Hotel Form - Laravel 8 CRUD Tutorial</title>
-<link rel="stylesheet" type="text/css" href="resources\css\styles.css">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
 </head>
 <body>
 <div class="container mt-2">
@@ -22,6 +22,7 @@
 {{ session('status') }}
 </div>
 @endif
+<div class="edit-form">
 <form action="{{ route('hotels.update',$hotel->id) }}" method="POST" enctype="multipart/form-data">
 @csrf
 @method('PUT')
@@ -72,6 +73,7 @@
 <button type="submit" class="btn btn-primary ml-3">Submit</button>
 </div>
 </form>
+</div>
 </div>
 </body>
 </html>

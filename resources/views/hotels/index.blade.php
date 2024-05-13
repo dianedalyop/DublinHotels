@@ -5,16 +5,17 @@
     <title>Dublin Hotels</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
     <style>
-        /* Define the basic style for both filled and empty stars */
+       
+       .star.empty {
+            color: #030408; 
+        }
         .star {
-            font-size: 1.2rem; /* Adjust the size as needed */
-            color: #ffc107; /* Color of filled stars */
+            font-size: 1.2rem; 
+            color: brown; 
         }
 
-        /* Style for empty stars */
-        .star.empty {
-            color: #e4e5e9; /* Color of empty stars */
-        }
+    
+        
     </style>
 </head>
 <body>
@@ -92,7 +93,32 @@
         </div>
     </main>
     <footer>
+        <div class="footerimages">
+<?php
+            $imagePath101 = "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vip-hotel-logo-design-template-eb72f8981df652fe0be27a9a517ae471_screen.jpg?ts=1660122446";
+            $imagePath2 ="https://images.wondershare.com/mockitt/examples/professional-look.jpg";
+            $imagePath3 ="https://uploads.turbologo.com/uploads/design/hq_preview_image/3394630/draw_svg20210520-10997-w0pjol.svg.png";
+            $imagePath4 ="https://img.freepik.com/free-vector/editable-hotel-logo-vector-business-corporate-identity-with-hidden-hotel-text_53876-111556.jpg";
+            $imagePath5 ="https://www.logopeople.in/wp-content/uploads/2022/05/hotel-logo-design-inspiration-1.jpg";
+            $imagePath6 ="https://inkbotdesign.com/wp-content/uploads/2023/05/Hilton-Hotel-Logos-Inspiration-1024x640.png";
+            $imagePath7 ="https://cdn.sanity.io/images/kts928pd/production/b00e2d30865932fc1c1d86658c7208810fe7911a-731x731.png";
+            $imagePath8 ="https://static.rfstat.com/renderforest/images/v2/landing-pics/logo_landing/hotel/hotel_logos_3.png";
+    
+            echo "<img src='$imagePath101'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath2'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath3'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath4'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath5'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath6'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath7'  alt='Description of the image' class='footimg'>";
+            echo "<img src='$imagePath8'  alt='Description of the image' class='footimg'>";
+?>
+        </div>
         <hr/>
+
+        <div class="copy_content">
+            <p>&copy; 2024 DublinHotelsProject  diane michael alAzeem . All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>

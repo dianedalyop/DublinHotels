@@ -10,8 +10,8 @@ header {
     color: red;
 }
 .mainimg{
-    width:70%;
-    height: 500px;
+    width:90%;
+    height: 600px;
     
 
 }
@@ -22,6 +22,7 @@ header {
 
 body{
     margin: 0px;
+
 }
 
 .navitem{
@@ -72,7 +73,7 @@ hr{
 }
 td img{
     width:300px;
-    height: 200px;
+    height: 250px;
 }
 .hidden {
     display:flex;
@@ -96,8 +97,8 @@ tbody {
     display: flex;
     flex-wrap: wrap;
 }
-main{
-    margin-top:5px;  
+body {
+    font-family: Arial, Helvetica;
 }
 .img1{
     margin-bottom: 30px;
@@ -109,7 +110,11 @@ td a{
     text-decoration: none;
     color: black;
     font-size: 15px;
-    margin: 5px;
+    margin-bottom: 35px;
+}
+td{
+    display: flex;
+    padding: 10px;
 }
 
 .booking_div form {
@@ -126,4 +131,112 @@ i {
 .arrow-keys  {
     display: flex;
     width: 150px;
+}
+.pull-right a {
+    background-color: brown;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.pull-right {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+}
+td .btn-danger{
+    border:none;
+    background-color: brown;
+    margin-top: 20px;
+    padding: 15px;
+    color: white;
+    border-radius: 5px;
+}
+td .btn-primary{
+    margin: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+.booking_div input{
+    width:200px;
+    height: 30px;
+    background-color: rgb(158, 134, 134);
+}
+.booking_div button{
+    background-color: brown;
+    color: white;
+    border: 0px;
+}
+body{
+    background-color: rgb(245, 228, 228);
+}
+.booking_div label{
+    font-size: 20px;
+}
+.edit-form {
+    display: flex;
+    height: 600px;
+    justify-content: center;
+}
+
+.edit-form input{
+    display: flex;
+    width: 400px;
+    height: 30px;
+    border: 30px;
+}
+.edit-form form .row {
+    display: flex;
+    height: 600px;
+    width: 700px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.create-form {
+    display: flex;
+    height: 600px;
+    justify-content: center;
+}
+
+.create-form .form-group input{
+    width: 400px;
+    height: 30px;
+}
+
+.create-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+footer img{
+    width: 100px;
+    height: 100px;
+}
+
+footer {
+    height: 300px;
+    width: 100%;
+    background-color: brown;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.footerimages {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.copy_content {
+    display: flex;
+    justify-content: center;
+}
+.copy_content p{
+    color: white;
 }

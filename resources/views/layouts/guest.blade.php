@@ -18,12 +18,21 @@
             h1{
                 font-size: 250%;
             }
+            form{
+                background-color: brown;
+            }
+            .w-full{
+                background-color: brown;
+            }
+            .w-full label{
+                color: white;
+            }
         </style>
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
-                <h1>Dublin Hotels </h1>
+                <h1>Dublin Hotels  </h1>
 
             </div>
 
